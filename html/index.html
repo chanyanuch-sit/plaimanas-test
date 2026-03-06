@@ -29,23 +29,25 @@
               <li class="nav-item"><a class="nav-link" href="#">Stories </a></li>
               <div class="text-head text--mobile">Plaimanas</div>
             </nav>
-            <div class="hstack gap-1"><a class="nav-link" href="#">Sign in</a><a class="btn"><img src="../assets/icons/bag.png" alt=""></a></div>
+            <div class="hstack gap-1"><a class="nav-link" href="#">Sign in</a><a class="btn"><img src="../assets/icons/bag.png" alt="Plaimanas"></a></div>
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="text-head text--desktop">Plaimanas</div>
-      </div>
     </header>
+    <header class="head-text">Plaimanas</header>
     <main>
-      <section class="sc-intro bg-light" style="min-height: 80dvh">
-        <div class="container"></div>
+      <section class="sc-intro">
+        <figure class="object-fit">
+          <video playsinline="" muted="" autoplay="" loop="">
+            <source src="../assets/videos/video-01.mp4" type="video/mp4">
+          </video>
+        </figure>
       </section>
       <section class="sc-new"> 
         <div class="container">
-          <div class="image"><img src="../assets/images/plaimanas-01.jpg" alt="">
-            <div class="text">New</div>
-          </div>
+          <figure class="image"><img src="../assets/images/plaimanas-01.jpg" alt="Plaimanas">
+            <figcaption>New</figcaption>
+          </figure>
           <article>
             <div class="h6">Sed egestas, nibh a condimentum imperdiet</div>
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</div>
@@ -54,10 +56,12 @@
       </section>
       <section class="sc-bestseller">
         <div class="container">
-          <div class="image">
-            <div class="bg-dark"></div>
-            <div class="text">Bestseller</div>
-          </div>
+          <figure class="image">
+            <video playsinline="" muted="" autoplay="" loop="">
+              <source src="../assets/videos/video-02.mp4" type="video/mp4">
+            </video>
+            <figcaption>Bestseller</figcaption>
+          </figure>
           <article>
             <div class="h6">Sed egestas, nibh a condimentum imperdiet</div>
             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae</div>
@@ -66,16 +70,19 @@
       </section>
       <section class="sc-collection">
         <div class="container">
-          <div class="image"><img src="../assets/images/plaimanas-02.jpg" alt="">
-            <div class="text">Collection 01</div>
-          </div>
+          <figure class="image"><img src="../assets/images/plaimanas-02.jpg" alt="Plaimanas">
+            <video playsinline="" muted="" autoplay="" loop="">
+              <source src="../assets/videos/video-02.mp4" type="video/mp4">
+            </video>
+            <figcaption>Collection 01</figcaption>
+          </figure>
           <div class="grid-2">
-            <div class="image-square"><img src="../assets/images/plaimanas-03.jpg" alt="">
-              <div class="text text--sm">Collection 02</div>
-            </div>
-            <div class="image-square"><img src="../assets/images/plaimanas-04.jpg" alt="">
-              <div class="text text--sm">Collection 03</div>
-            </div>
+            <figure class="image-square"><img src="../assets/images/plaimanas-03.jpg" alt="Plaimanas">
+              <figcaption class="text-sm">Collection 02</figcaption><img class="image-hover" src="../assets/images/plaimanas-05.jpg" alt="Plaimanas">
+            </figure>
+            <figure class="image-square"><img src="../assets/images/plaimanas-04.jpg" alt="Plaimanas">
+              <figcaption class="text-sm">Collection 03</figcaption><img class="image-hover" src="../assets/images/plaimanas-05.jpg" alt="Plaimanas">
+            </figure>
           </div>
         </div>
       </section>
@@ -83,16 +90,25 @@
         <div class="swiper sc-scrolling-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="slide-item"><img src="../assets/icons/arrow-right.png" alt=""><span>New arrivals</span></div>
+              <div class="slide-item">
+                <figure><img src="../assets/icons/arrow-right.png" alt="Plaimanas"></figure><span>New arrivals</span>
+              </div>
             </div>
             <div class="swiper-slide">
-              <div class="slide-item"><img src="../assets/icons/arrow-left.png" alt=""><span>Best seller</span><img src="../assets/icons/arrow-right.png" alt=""></div>
+              <div class="slide-item">
+                <figure><img src="../assets/icons/arrow-left.png" alt="Plaimanas"></figure><span>Best seller</span>
+                <figure><img src="../assets/icons/arrow-right.png" alt="Plaimanas"></figure>
+              </div>
             </div>
             <div class="swiper-slide">
-              <div class="slide-item"><img src="../assets/icons/arrow-left.png" alt=""><span>New arrivals</span></div>
+              <div class="slide-item">
+                <figure><img src="../assets/icons/arrow-left.png" alt="Plaimanas"></figure><span>New arrivals</span>
+              </div>
             </div>
             <div class="swiper-slide">
-              <div class="slide-item"><img src="../assets/icons/arrow-left.png" alt=""><span>Best seller</span></div>
+              <div class="slide-item">
+                <figure><img src="../assets/icons/arrow-left.png" alt="Plaimanas"></figure><span>Best seller</span>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +226,7 @@
               <div class="h1">make an inquiry</div>
               <div class="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo.</div>
             </div>
-            <div class="form">
+            <fieldset class="form">
               <form>
                 <div class="row g-3 mb-3">
                   <div class="col-md-12">
@@ -263,7 +279,7 @@
                 </div>
                 <button class="btn btn-primary" type="submit">SEND</button>
               </form>
-            </div>
+            </fieldset>
           </div>
         </div>
       </section>
@@ -315,7 +331,7 @@
         <div class="copyright">
           <div class="text">©PLAIMANAS </div>
           <div class="hstack gap-1">
-            <div class="text">Web by</div><img src="../assets/images/plaimanas-logo.webp" alt="" height="28">
+            <div class="text">Web by</div><img src="../assets/images/plaimanas-logo.webp" alt="Plaimanas" height="28">
           </div>
         </div>
       </div>

@@ -2,60 +2,70 @@ extends layout
 
 block content
 	main
-		section.sc-intro(style='min-height: 80dvh').bg-light
-			.container
-			//- video(playsinline='', muted='', autoplay='', loop='')
-			//- 	source(src="assets/videos/mockup_video.mp4", type="video/mp4")
+		section.sc-intro
+			figure.object-fit
+				video(playsinline='', muted='', autoplay='', loop='')
+					source(src="../assets/videos/video-01.mp4", type="video/mp4")
 		section.sc-new 
 			.container
-				.image
-					img(src="../assets/images/plaimanas-01.jpg", alt="")
-					.text New
+				figure.image
+					img(src="../assets/images/plaimanas-01.jpg", alt="Plaimanas")
+					figcaption New
 				article
 					.h6 Sed egestas, nibh a condimentum imperdiet
 					div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae
 
 		section.sc-bestseller
 			.container
-				.image
-					.bg-dark
-					.text Bestseller
+				figure.image
+					video(playsinline='', muted='', autoplay='', loop='')
+						source(src="../assets/videos/video-02.mp4", type="video/mp4")
+					figcaption Bestseller
 				article
 					.h6 Sed egestas, nibh a condimentum imperdiet
 					div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae
 
 		section.sc-collection
 			.container
-				.image
-					img(src="../assets/images/plaimanas-02.jpg", alt="")
-					.text Collection 01
+				figure.image
+					img(src="../assets/images/plaimanas-02.jpg", alt="Plaimanas")
+					video(playsinline='', muted='', autoplay='', loop='')
+						source(src="../assets/videos/video-02.mp4", type="video/mp4")
+					figcaption Collection 01
 				.grid-2
-					.image-square
-						img(src="../assets/images/plaimanas-03.jpg", alt="")
-						.text.text--sm Collection 02
-					.image-square
-						img(src="../assets/images/plaimanas-04.jpg", alt="")
-						.text.text--sm Collection 03
+					figure.image-square
+						img(src="../assets/images/plaimanas-03.jpg", alt="Plaimanas")
+						figcaption.text-sm Collection 02
+						img.image-hover(src="../assets/images/plaimanas-05.jpg", alt="Plaimanas")
+					figure.image-square
+						img(src="../assets/images/plaimanas-04.jpg", alt="Plaimanas")
+						figcaption.text-sm Collection 03
+						img.image-hover(src="../assets/images/plaimanas-05.jpg", alt="Plaimanas")
 
 		section.sc-scrolling
 			.swiper.sc-scrolling-slider
 				.swiper-wrapper
 					.swiper-slide
 						.slide-item
-							img(src="../assets/icons/arrow-right.png", alt="")
+							figure
+								img(src="../assets/icons/arrow-right.png", alt="Plaimanas")
 							span New arrivals
 					.swiper-slide
 						.slide-item
-							img(src="../assets/icons/arrow-left.png", alt="")
+							figure
+								img(src="../assets/icons/arrow-left.png", alt="Plaimanas")
 							span Best seller
-							img(src="../assets/icons/arrow-right.png", alt="")
+							figure
+								img(src="../assets/icons/arrow-right.png", alt="Plaimanas")
 					.swiper-slide
 						.slide-item
-							img(src="../assets/icons/arrow-left.png", alt="")
+							figure
+								img(src="../assets/icons/arrow-left.png", alt="Plaimanas")
 							span New arrivals
 					.swiper-slide
 						.slide-item
-							img(src="../assets/icons/arrow-left.png", alt="")
+							figure
+								img(src="../assets/icons/arrow-left.png", alt="Plaimanas")
 							span Best seller
 
 		section.sc-services
@@ -72,6 +82,7 @@ block content
 					.item
 						p Secure Payment
 						div Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo, turpis elit ultricies justo, vitae molestie quam justo ut lacus. Proin vitae
+
 		section.sc-question
 			.container
 				.content
@@ -147,7 +158,7 @@ block content
 					.content
 						.h1 make an inquiry
 						.h6 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare, nisl non rhoncus commodo.
-					.form
+					fieldset.form
 						form
 							.row.g-3.mb-3
 								.col-md-12

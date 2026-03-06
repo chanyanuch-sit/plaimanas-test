@@ -1,8 +1,31 @@
 @use 'tokens' as *
 
+main
+	padding-top: 48px
+
 section
 	padding-top: 6rem
 	padding-bottom: 6rem
+
+figure
+	margin: 0
+
+.sc-intro
+	padding-top: 0
+	padding-bottom: 0
+	width: 100%
+	height: 100vh
+	overflow: hidden
+
+	.object-fit
+		width: 100%
+		height: 100%
+		margin: 0
+
+	video
+		width: 100%
+		height: 100%
+		object-fit: cover
 
 .sc-new
 	padding-bottom: 0
@@ -18,7 +41,7 @@ section
 			height: auto
 			aspect-ratio: 1/1
 			object-fit: cover
-		.text
+		figcaption
 			position: absolute
 			top: 50%
 			left: 50%
@@ -46,12 +69,12 @@ section
 		aspect-ratio: 16/9
 		margin-bottom: 1rem
 		overflow: hidden
-		.bg-dark
+		video
 			width: 100%
 			height: auto
 			aspect-ratio: 16/9
 			object-fit: cover
-		.text
+		figcaption
 			position: absolute
 			top: 50%
 			left: 50%
@@ -61,6 +84,7 @@ section
 			// font-size: 80px
 			font-size: clamp(42px, 5vw, 80px)
 			font-weight: 700
+			will-change: transform
 	article
 		max-width: 760px
 		margin: 0 auto
@@ -70,6 +94,7 @@ section
 			font-weight: 700
 
 .sc-collection
+
 	.container
 		.image
 			position: relative
@@ -79,11 +104,23 @@ section
 			overflow: hidden
 			@media (min-width: $lg)
 				margin-bottom: 4rem
-			img
+			img,video
 				width: 100%
 				height: 100%
 				aspect-ratio: 16/9
 				object-fit: cover
+			video
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				visibility: hidden
+				transition: all .3s ease
+			&:nth-child(01)
+				&:hover
+					video
+						opacity: 1
+						visibility: visible
 		.grid-2
 			display: grid
 			grid-template-columns: repeat(2,1fr)
@@ -97,18 +134,30 @@ section
 				position: relative
 				aspect-ratio: 1/1
 				max-width: 455px
-				aspect-ratio: 1/1
 				overflow: hidden
 				img
 					width: 100%
 					height: 100%
 					aspect-ratio: 1/1
 					object-fit: cover
-		.text
+				.image-hover
+					position: absolute
+					top: 0
+					left: 0
+					opacity: 0
+					visibility: hidden
+					transition: all .3s ease
+					object-position: center 20%
+				&:hover
+					.image-hover
+						opacity: 1
+						visibility: visible
+		figcaption
 			position: absolute
 			top: 50%
 			left: 50%
 			transform: translate(-50%, -50%)
+			padding: 8px
 			text-transform: uppercase
 			color: var(--bs-white)
 			font-size: 60px
@@ -116,8 +165,9 @@ section
 			font-weight: 700
 			width: 100%
 			text-align: center
-			&.text--sm
-				font-size: clamp(24px, 3vw, 40px)
+			&.text-sm
+				font-size: clamp(22px, 3vw, 40px)
+				z-index: 1
 
 .sc-scrolling
 	padding-top: 0
