@@ -1,0 +1,267 @@
+@use 'tokens' as *
+
+section
+	padding-top: 6rem
+	padding-bottom: 6rem
+
+.sc-new
+	padding-bottom: 0
+	.image
+		position: relative
+		max-width: 480px
+		margin: 0 auto auto
+		aspect-ratio: 1/1
+		margin-bottom: 1rem
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
+			aspect-ratio: 1/1
+			object-fit: cover
+		.text
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			text-transform: uppercase
+			color: var(--bs-white)
+			// font-size: 80px
+			font-size: clamp(42px, 5vw, 80px)
+			font-weight: 700
+	article
+		max-width: 760px
+		margin: 0 auto
+		text-align: center
+		.h6
+			margin-bottom: 1rem
+			font-weight: 700
+
+.sc-bestseller
+	padding-bottom: 0
+	.image
+		position: relative
+		max-width: 960px
+		width: 100%
+		margin: 0 auto auto
+		aspect-ratio: 16/9
+		margin-bottom: 1rem
+		overflow: hidden
+		.bg-dark
+			width: 100%
+			height: auto
+			aspect-ratio: 16/9
+			object-fit: cover
+		.text
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			text-transform: uppercase
+			color: var(--bs-white)
+			// font-size: 80px
+			font-size: clamp(42px, 5vw, 80px)
+			font-weight: 700
+	article
+		max-width: 760px
+		margin: 0 auto
+		text-align: center
+		.h6
+			margin-bottom: 1rem
+			font-weight: 700
+
+.sc-collection
+	.container
+		.image
+			position: relative
+			max-width: 920px
+			aspect-ratio: 16/9
+			margin: 0 auto 2rem auto
+			overflow: hidden
+			@media (min-width: $lg)
+				margin-bottom: 4rem
+			img
+				width: 100%
+				height: 100%
+				aspect-ratio: 16/9
+				object-fit: cover
+		.grid-2
+			display: grid
+			grid-template-columns: repeat(2,1fr)
+			gap: 1.5rem
+			place-items: center
+			max-width: 920px
+			margin: 0 auto
+			@media (min-width: $lg)
+				gap: 3rem
+			.image-square
+				position: relative
+				aspect-ratio: 1/1
+				max-width: 455px
+				aspect-ratio: 1/1
+				overflow: hidden
+				img
+					width: 100%
+					height: 100%
+					aspect-ratio: 1/1
+					object-fit: cover
+		.text
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			text-transform: uppercase
+			color: var(--bs-white)
+			font-size: 60px
+			font-size: clamp(32px, 4.5vw, 60px)
+			font-weight: 700
+			width: 100%
+			text-align: center
+			&.text--sm
+				font-size: clamp(24px, 3vw, 40px)
+
+.sc-scrolling
+	padding-top: 0
+	padding-bottom: 0
+	background: var(--bs-black)
+	.swiper-wrapper
+		transition-timing-function: linear !important
+
+	.sc-scrolling-slider .swiper-slide
+		width: auto
+
+	.slide-item
+		display: flex
+		align-items: center
+		gap: 4rem
+		white-space: nowrap
+		color: var(--bs-white)
+		// font-size: 56px
+		font-size: clamp(28px, 3.5vw, 56px)
+		font-weight: 700
+		text-transform: uppercase
+		img
+			height: 24px
+			@media (min-width: $lg)
+				height: 48px
+
+.sc-services
+	.grid-3
+		display: grid
+		grid-template-columns: repeat(1,1fr)
+		gap: 4rem
+		@media (min-width: $lg)
+			grid-template-columns: repeat(3,1fr)
+		.item
+			p
+				font-size: 18px
+				font-weight: 700
+				text-transform: uppercase
+				margin-bottom: 1rem
+			div
+				font-size: 16px
+				color: var(--bs-gray-600)
+
+.sc-question
+	background: var(--bs-black)
+	color: var(--bs-white)
+	.content
+		display: flex
+		flex-direction: column
+		align-items: center
+		.h1
+			text-transform: uppercase
+			font-weight: 700
+			@media (max-width: $lg)
+				text-align: center
+		p
+			margin-bottom: 2rem
+			@media (max-width: $lg)
+				text-align: center
+	.nav
+		--bs-nav-link-padding-y: .35rem
+	.nav-pills
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: .75rem
+		margin-bottom: 3rem
+		@media (min-width: $lg)
+			flex-direction: row
+			gap: 1rem
+			margin-bottom: 6rem
+		.nav-link
+			background-color: rgb(var(--bs-white-rgb), .25)
+			color: var(--bs-white)
+			border: 1px solid #828282
+			text-transform: uppercase
+			border-radius: var(--bs-border-radius-pill)
+			&.active
+				background-color: var(--bs-white)
+				color: var(--bs-black)
+	.accordion
+		--bs-accordion-color: rgb(var(--bs-white-rgb), .6)
+		--bs-accordion-bg: transparent
+		--bs-accordion-border-color: rgb(var(--bs-white-rgb), .2)
+	.accordion-item
+		// border: none
+		border-top: 0
+		border-left: 0
+		border-right: 0
+	.accordion-button
+		--bs-accordion-btn-padding-x: 0
+		--bs-accordion-btn-color: var(--bs-white)
+		--bs-accordion-active-bg: transparent
+		--bs-accordion-active-color: var(--bs-white)
+		text-transform: uppercase
+		box-shadow: none !important
+		&:after
+			filter: invert(1)
+	.accordion-body
+		--bs-accordion-body-padding-x: 0
+		padding-top: 0
+	// .accordion-collapse
+	// 	border-bottom: 1px solid rgb(var(--bs-white-rgb), .2)
+
+.sc-make-an-inquiry
+	.grid-2
+		display: grid
+		grid-template-columns: 1fr
+		gap: 2rem
+		@media (min-width: $lg)
+			grid-template-columns: 1fr 70%
+			gap: 4rem
+		.content
+			.h1
+				text-transform: uppercase
+				font-weight: 700
+			.h6
+				margin-bottom: 2rem
+		.form
+			.btn
+				padding: .75rem 1.5rem
+				width: 128px
+			@media (min-width: $lg)
+				padding-left: 4rem
+
+//Form
+.form-floating
+	.form-control
+		padding-left: 0
+		border: none
+		border-bottom: 1px solid #dee2e6
+		border-radius: 0
+		box-shadow: none
+		&:focus
+			border-bottom: 2px solid #000
+			box-shadow: none
+	.form-select
+		border: none
+		border-bottom: 1px solid #dee2e6
+		border-radius: 0
+		box-shadow: none
+		padding-left: 0
+		&:focus
+			border-bottom: 2px solid #000
+			box-shadow: none
+	label
+		padding-left: 0

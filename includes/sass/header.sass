@@ -1,0 +1,171 @@
+@use 'tokens' as *
+
+.header
+	position: fixed
+	top: 0
+	width: 100%
+	height: 48px
+	text-transform: uppercase
+	z-index: 1
+	font-family: "Hanken Grotesk", sans-serif
+	.wrapper-header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: .5rem
+		height: 48px
+
+		.btn-dropdown
+			position: relative
+			padding-right: 1rem
+			&:after
+				content: '▾'
+				position: absolute
+				right: 0
+				top: 50%
+				transform: translateY(-53%)
+
+		.link-currency
+			position: relative
+			.menu-dropdown
+				position: absolute
+				left: -.5rem
+				top: 24px
+				opacity: 0
+				visibility: hidden
+				transition: all .3s ease
+				.nav-link
+					padding: .5rem
+			&:hover
+				.btn-dropdown
+					opacity: .75
+				.menu-dropdown
+					opacity: 1
+					visibility: visible
+
+		.menu-mobile
+			position: absolute
+			top: .25rem
+			left: 50%
+			transform: translateX(-50%)
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: 42px
+			height: 42px
+			@media (min-width: $lg)
+				display: none
+			.line
+				display: block
+				width: 24px
+				height: 1px
+				background: var(--bs-black)
+				margin: 4px 0
+				transition: all .3s ease
+			&.active
+				.line
+					&:nth-child(1)
+						transform: rotate(45deg) translate(4px, 4px)
+					&:nth-child(2)
+						transform: rotate(-45deg) translate(2px, -2px)
+
+		.nav
+			display: none
+			position: absolute
+			left: 0
+			top: 58px
+			width: 100%
+			height: calc(100dvh - 58px)
+			padding: 1rem
+			background: var(--white)
+			gap: 16px
+			z-index: 10
+			@media (min-width: $lg)
+				position: static
+				display: flex
+				height: auto
+				width: auto
+			&.show
+				display: flex
+				flex-direction: column
+				align-items: center
+			.nav-item
+				&:nth-of-type(03)
+					&:hover
+						.menu-dropdown
+							display: flex !important
+			.nav-link
+				width: 100%
+				height: 36px
+				@media (min-width: $lg)
+					&:hover
+						font-size: 120%
+						font-weight: 700
+						transition: all .3s ease
+						overflow: hidden
+			.btn-dropdown
+				@media (min-width: $lg)
+					&:after
+						display: none
+				&.active
+					font-size: 1.5rem
+					font-weight: 700
+					text-align: center
+			.menu-dropdown
+				display: none
+				@media (min-width: $lg)
+					// display: flex !important
+					flex-direction: column
+					position: fixed
+					top: 0
+					left: 0
+					background: var(--bs-black)
+					padding: 1rem
+					width: 100%
+					height: 100dvh
+					color: var(--bs-white)
+				&.show
+					display: flex !important
+					flex-direction: column
+					align-items: center
+				p
+					font-size: 1.5rem
+					font-weight: 700
+					text-align: center
+					margin-bottom: .5rem
+				.nav-link
+					text-align: center
+					@media (min-width: $lg)
+						color: var(--bs-white)
+
+			.text-head
+				position: absolute
+				bottom: 0
+				@media (min-width: $lg)
+					display: none
+
+		.btn
+			img
+				height: 12px
+				aspect-ratio: 1/1
+				object-fit: contain
+
+	.text-head
+		width: 100%
+		line-height: 1
+		text-align: center
+		font-weight: 700
+		// font-size: clamp(72px, 12vw, 205px)
+		// font-size: clamp(64px, 12vw, 205px)
+		// line-height: 0.95
+		// letter-spacing: -0.03em
+		color: var(--bs-white)
+		// opacity: .5
+		mix-blend-mode: difference
+
+		font-size: clamp(80px,12vw,205px)
+		// @media (min-width: $sm)
+		// 	font-size: clamp(64px, 14vw, 205px)
+		// @media (min-width: $md)
+		// 	font-size: clamp(64px, 16vw, 205px)
