@@ -6,17 +6,17 @@
 	width: 100%
 	height: 48px
 	text-transform: uppercase
-	z-index: 2
+	z-index: 100
 	.wrapper-header
 		display: flex
 		align-items: center
 		justify-content: space-between
-		padding: .5rem
+		padding: var(--space-sm)
 		height: 48px
 
 		.btn-dropdown
 			position: relative
-			padding-right: 1rem
+			padding-right: var(--space-md)
 			&:after
 				content: '▾'
 				position: absolute
@@ -32,11 +32,12 @@
 				top: 34px
 				opacity: 0
 				visibility: hidden
-				transition: all .3s ease
+				transition: var(--transition)
 				background: var(--bs-white)
 				z-index: 2
 				.nav-link
-					padding: .5rem
+					padding: var(--space-sm)
+					width: 78px
 			&:hover
 				.btn-dropdown
 					opacity: .75
@@ -46,7 +47,7 @@
 
 		.menu-mobile
 			position: absolute
-			top: .25rem
+			top: 4px
 			left: 50%
 			transform: translateX(-50%)
 			display: flex
@@ -63,7 +64,7 @@
 				height: 1px
 				background: var(--bs-black)
 				margin: 4px 0
-				transition: all .3s ease
+				transition: var(--transition)
 			&.active
 				.line
 					&:nth-child(1)
@@ -75,11 +76,11 @@
 			display: none
 			position: absolute
 			left: 0
-			top: 58px
+			top: 48px
 			width: 100%
-			height: calc(100dvh - 58px)
-			padding: 1rem
-			background: var(--white)
+			height: calc(100dvh - 48px)
+			padding: var(--space-md)
+			background: var(--bs-white)
 			gap: 16px
 			z-index: 10
 			@media (min-width: $lg)
@@ -87,6 +88,7 @@
 				display: flex
 				height: auto
 				width: auto
+				padding: 0
 			&.show
 				display: flex
 				flex-direction: column
@@ -103,26 +105,25 @@
 					&:hover
 						font-size: 120%
 						font-weight: 700
-						transition: all .3s ease
+						transition: var(--transition)
 						overflow: hidden
 			.btn-dropdown
 				@media (min-width: $lg)
 					&:after
 						display: none
 				&.active
-					font-size: 1.5rem
+					font-size: 1var(--space-sm)
 					font-weight: 700
 					text-align: center
 			.menu-dropdown
 				display: none
 				@media (min-width: $lg)
-					// display: flex !important
 					flex-direction: column
 					position: fixed
 					top: 0
 					left: 0
 					background: var(--bs-black)
-					padding: 1rem
+					padding: var(--space-md)
 					width: 100%
 					height: 100dvh
 					color: var(--bs-white)
@@ -131,17 +132,23 @@
 					flex-direction: column
 					align-items: center
 				p
-					font-size: 1.5rem
+					font-size: 1var(--space-sm)
 					font-weight: 700
 					text-align: center
-					margin-bottom: .5rem
+					margin-bottom: var(--space-sm)
 				.nav-link
 					text-align: center
 					@media (min-width: $lg)
 						color: var(--bs-white)
-			.text-head
+			.text-branding
 				position: absolute
 				bottom: 0
+				font-family: "Hanken Grotesk", sans-serif
+				font-size: 17.75vw
+				text-transform: uppercase
+				line-height: 1
+				text-align: center
+				font-weight: 700
 				@media (min-width: $lg)
 					display: none
 		.btn
@@ -150,7 +157,7 @@
 				aspect-ratio: 1/1
 				object-fit: contain
 
-.head-text
+.head-text-branding
 	position: fixed
 	top: 48px
 	left: 50%

@@ -23,7 +23,7 @@ $(document).ready(function() {
 		var scrollTop = $(this).scrollTop();
 		var windowH = $(window).height();
 
-		$(".sc-new .image, .sc-bestseller .image").each(function () {
+		$(".sc--new .image, .sc--bestseller .image").each(function () {
 			var $image = $(this);
 			var $text = $image.find("figcaption");
 
